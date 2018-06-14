@@ -35,6 +35,9 @@
 			this.button2 = new System.Windows.Forms.Button();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.listView1 = new System.Windows.Forms.ListView();
+			this.testTextBox = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.resultTextBox = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// openFileDialog1
@@ -59,6 +62,7 @@
 			this.textBox1.Size = new System.Drawing.Size(214, 19);
 			this.textBox1.TabIndex = 1;
 			this.textBox1.Text = "https?://[^/]+/([^/]+)/([^/]+)/([^/]+)";
+			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
 			// label1
 			// 
@@ -72,7 +76,7 @@
 			// button2
 			// 
 			this.button2.Enabled = false;
-			this.button2.Location = new System.Drawing.Point(32, 208);
+			this.button2.Location = new System.Drawing.Point(169, 369);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 4;
@@ -98,11 +102,42 @@
 			this.listView1.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listView1_DrawItem);
 			this.listView1.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listView1_DrawSubItem);
 			// 
+			// testTextBox
+			// 
+			this.testTextBox.Location = new System.Drawing.Point(30, 170);
+			this.testTextBox.Name = "testTextBox";
+			this.testTextBox.Size = new System.Drawing.Size(214, 19);
+			this.testTextBox.TabIndex = 6;
+			this.testTextBox.TextChanged += new System.EventHandler(this.testTextBox_TextChanged);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(30, 155);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(31, 12);
+			this.label2.TabIndex = 7;
+			this.label2.Text = "テスト";
+			// 
+			// resultTextBox
+			// 
+			this.resultTextBox.Location = new System.Drawing.Point(30, 196);
+			this.resultTextBox.Multiline = true;
+			this.resultTextBox.Name = "resultTextBox";
+			this.resultTextBox.ReadOnly = true;
+			this.resultTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.resultTextBox.Size = new System.Drawing.Size(214, 109);
+			this.resultTextBox.TabIndex = 8;
+			this.resultTextBox.WordWrap = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(742, 413);
+			this.Controls.Add(this.resultTextBox);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.testTextBox);
 			this.Controls.Add(this.listView1);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.label1);
@@ -127,6 +162,9 @@
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.ListView listView1;
+		private System.Windows.Forms.TextBox testTextBox;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox resultTextBox;
 	}
 }
 

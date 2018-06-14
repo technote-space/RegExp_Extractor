@@ -127,5 +127,42 @@ namespace RegExp_Extractor
 			this.listView1.Columns[e.Column].Tag = !value;
 			this.listView1.Invalidate();
 		}
+
+		private void testTextBox_TextChanged(object sender, EventArgs e)
+		{
+			test();
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+			test();
+		}
+
+		private void test()
+		{
+			if (!String.IsNullOrWhiteSpace(textBox1.Text))
+			{
+				try
+				{
+					var match = Regex.Match(testTextBox.Text, textBox1.Text);
+					if (match.Success)
+					{
+						resultTextBox.Text = String.Join("\r\n", match.Groups.Cast<Group>().Select(x => x.ToString()));
+					}
+					else
+					{
+						resultTextBox.Text = "マッチしません";
+					}
+				}
+				catch (Exception ex)
+				{
+					resultTextBox.Text = ex.Message;
+				}
+			}
+			else
+			{
+				resultTextBox.Text = textBox1.Text;
+			}
+		}
 	}
 }
